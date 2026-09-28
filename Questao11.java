@@ -1,15 +1,21 @@
-public static void vetoresQ10() {
+public static void vetoresQ11() {
         Scanner sc = new Scanner(System.in);
-        int[] x = new int[5];
-        int[] y = new int[5];
+        double[] v = new double[10];
+        double soma = 0;
 
-        for (int i = 0; i < 5; i++) x[i] = sc.nextInt();
-        for (int i = 0; i < 5; i++) y[i] = sc.nextInt();
+        for (int i = 0; i < 10; i++) {
+            v[i] = sc.nextDouble();
+            soma += v[i];
+        }
 
-        // a
-        for (int i = 0; i < 5; i++) System.out.print((x[i] + y[i]) + " ");
-        System.out.println();
+        double m = soma / 10;
+        double somaVariancia = 0;
 
-        // b
-        for (int i = 0; i < 5; i++) System.out.print((x[i] * y[i]) + " ");
-        System.out.println();
+        for (int i = 0; i < 10; i++) {
+            somaVariancia += Math.pow(v[i] - m, 2);
+        }
+
+        double desvioPadrao = Math.sqrt(somaVariancia / 10);
+        System.out.println(desvioPadrao);
+    }
+
